@@ -15,7 +15,7 @@ deploy:
       chartPath: kubernetes/helm
       namespace: cowweb-dev
       values:
-        image: docker.io/makotow/cowweb
+        image: docker.io/ndxjapan/cowweb
 #      valuesFilePath: kubernetes/dev/helm-values.yaml
       setValues:
         replicaCount: 1
@@ -29,7 +29,7 @@ profiles:
   - name: release
     build:
       artifacts:
-      - imageName: docker.io/makotow/cowweb
+      - imageName: docker.io/ndxjapan/cowweb
         workspace: .
         docker:
           dockerfilePath: ./kubernetes/container/Dockerfile_release
@@ -44,7 +44,7 @@ profiles:
           chartPath: kubernetes/helm
           namespace: cowweb-release
           values:
-            image: docker.io/makotow/cowweb
+            image: docker.io/ndxjapan/cowweb
           setValues:
             replicaCount: 2
             ingress.enabled: false
