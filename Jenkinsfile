@@ -22,7 +22,7 @@ podTemplate(
         }
       }
       stage('Test skaffold') {
-        git 'https://github.com/makotow/cowweb.git'
+        git 'https://github.com/NetAppJpTechTeam/cowweb.git'
         container('skaffold-insider') {
           sh """
             docker login --username=$DOCKER_ID_USR --password=$DOCKER_ID_PSW
